@@ -1,0 +1,279 @@
+
+/* Table of Content
+==================================================
+	# Setting & basic styles
+	# Layout
+	# Typography
+    # helpers
+	# Forms
+    # Buttons
+    # Components */
+
+
+/* Setting & basic styles
+================================================== */
+:root {
+ --c-main: rgb(71, 186, 51);
+ --c-main-light: rgb(130, 210, 79);
+ --c-white: #ffffff;
+ --c-black: #000;
+ --c-text: rgb(89,94,97);
+
+ --bg-grey: rgb(92, 92, 92);
+ --bg-light: rgb(229, 229, 229);
+ --fa-main: Helvetica, Arial, sans-serif;
+
+ --border-radius: 6px;
+ --mar-bottom: 1.2em;
+
+}
+
+@custom-media --small-viewport (min-width: 37.5em);
+
+html {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+}
+p { margin: 0 0 var(--mar-bottom) 0;}
+a { color: var(--c-main); }
+
+
+/* Layout
+================================================== */
+.container {
+    max-width: 21.25em;
+    margin: auto;
+    width: 96%;
+}
+.container-medium {
+    max-width: 21.25em;
+    margin: auto;
+    width: 96%;
+}
+.container-narrow {
+    max-width: 15.63em;
+    margin: auto;
+    width: 96%;
+}
+[class^='grid-x'] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class^='cell-m'] {
+   width: 100%;
+}
+
+.grid-x-center {
+    justify-content: center;
+}
+
+@media (--small-viewport) {
+    .pad-y-m-big {
+        padding: 2em 0 3em;
+    }
+    .container {
+        max-width: 57.5em;
+    }
+    .container-medium {
+        max-width:48.5em;
+    }
+    .container-narrow {
+        max-width:29.5em;
+    }
+    .cell-m-50 {
+        max-width: 50%;
+        padding: 0 .5em;
+    }
+}
+
+/* Typography
+================================================== */
+
+body {
+    font-family: var(--fa-main);
+    font-size: 100%;
+    line-height: 1.25;
+    color: var(--c-text);
+}
+p {
+    font-size: .91em;
+}
+h1 { 
+    font-size: 1.3rem;
+    line-height: 1;
+    margin: 0;
+}
+.fs-biggest {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+@media (--small-viewport) {
+    h1 { font-size: 2.25rem; }
+   .fs-m-big { font-size: 1.2em; }
+   .fs-m-bigger { font-size: 1.28em; }
+   p { font-size: 1em;}
+}
+
+
+
+/* Helpers
+================================================== */
+.c-verde {
+    color: var(--c-main);
+}
+.text-center {
+    text-align: center;
+}
+.s-text-center {
+    text-align: center;
+}
+.clear-list,
+.clear-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (--small-viewport) {
+    .s-text-center {
+        text-align: left;
+    }
+}
+/* Forms
+================================================== */
+
+.form-field {
+    margin-bottom: var(--mar-bottom);
+}
+
+    .form-field label {
+        display: inline-block;
+        margin-bottom: .3rem;
+        font-weight: 700;
+    }
+
+    .form-field input[type="text"],
+    .form-field input[type="email"],
+    .form-field textare {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+    }
+
+
+/* Buttons
+================================================== */
+.btn-primary {
+    background-color: var(--c-main);
+    color: #fff;
+    border-radius: var(--border-radius);
+    display: inline-block;
+    padding: .6em 1.2em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: var(--mar-bottom);
+    font-weight: 700;
+    font-size: inherit;
+    border: 0;
+}
+.btn-primary.fs-biggest {
+    padding: .3em .6em;
+    font-size: 1.4em;
+}
+.is-large {
+    width: 100%;
+}
+
+
+.errorLogin, .error, .ok {
+    color: #951d1d;
+    background-color: #f1c9c9;
+    margin-bottom: var(--mar-bottom);
+    padding: 1em;
+    text-align: center;
+}
+.ok { 
+    color:#58810b;
+    background-color: #d2e7ab;
+}
+
+/* Components
+================================================== */
+
+.recovery-password {
+    border-top: 1px solid var(--c-main);
+    padding: .8em 0;
+}
+.header {
+    color: var(--c-black);
+    border-bottom: 7px solid var(--c-main);
+    padding: 1.5em 0;
+}
+
+.footer {
+    background-color: var( --bg-grey);
+    color: var(--c-white);
+    padding: .6em 0;
+}
+    .footer a { color: var(--c-main-light); }
+    .footer p { margin: 0; }
+
+.main {
+    padding: 3em 0;
+    background-image: linear-gradient(var(--bg-light), var(--c-white));
+    background-size:100% 150px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    overflow: hidden;
+}
+
+.logos-portal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width:  25em;
+    margin:0 auto 1.2em;
+}
+    .logos-portal li { margin: 0 8px 15px; }
+    .logos-portal li:first-child { margin-bottom: 25px; }
+    .logos-portal li:nth-child(3),
+    .logos-portal li:nth-child(4) {
+        order: 1;
+    }
+
+@media (--small-viewport) {
+    .logos-portal {
+        max-width: 100%;
+    }
+    .main {
+        padding: 6em 0 5em;
+    }
+    .logos-portal li:first-child {
+        margin-bottom: 15px;
+    }
+    .logos-portal li:nth-child(1n) {
+        order: 1;
+    }
+
+}
